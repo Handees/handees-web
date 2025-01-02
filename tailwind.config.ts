@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        cabin: "var(--font-cabin)",
+        outfit: "var(--font-outfit)",
+      },
     },
   },
   plugins: [],
