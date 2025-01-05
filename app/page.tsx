@@ -1,20 +1,19 @@
 import Image from "next/image";
 
-import handeeLogo from "@/public/svg/handee.svg";
+import handeeLogo from "@/public/svg/logo.svg";
 import handeePhoneFlat from "@/public/png/handees-phone-flat.png";
 import handeePhoneSide from "@/public/png/handees-phone-side.png";
 import phoneBg from "@/public/png/phone-bg.png";
 import phoneBgLg from "@/public/png/phone-bg-lg.png";
 
-import x from "@/public/svg/x.svg";
 import ig from "@/public/svg/ig.svg";
-import google from "@/public/svg/google.svg";
 import heroBg from "@/public/svg/hero-bg.svg";
 
 import curvedLine1 from "@/public/svg/curve-line-1.svg";
 import curvedLine2 from "@/public/svg/curve-line-2.svg";
 import curvedLine3 from "@/public/svg/curve-line-3.svg";
 import curvedLine4 from "@/public/svg/curve-line-4.svg";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -48,16 +47,19 @@ export default function Home() {
               "0px 3px 2px 0px #FFFFFF1A inset, 0px -2px 4px 0px #73B8BB1A inset, 0px 4px 32px -4px #73B8BB3B",
           }}
         >
-          <button className="py-2 px-4 rounded-full bg-[#14161c]">
+          <Link
+            href="https://forms.gle/d1h4WiZHMv8RPivx6"
+            className="py-2 px-4 rounded-full bg-[#14161c] block"
+          >
             Join our waitlist
-          </button>
+          </Link>
         </div>
       </nav>
       <main className="relative z-10 text-white">
         <Image
           src={heroBg}
           alt=""
-          className="absolute top-0 left-0 w-screen lg:hidden"
+          className="absolute top-0 left-0 w-full lg:hidden"
         />
         <div className="absolute top-0 left-0 w-full hidden lg:block">
           <Image
@@ -113,9 +115,12 @@ export default function Home() {
                   "0px 3px 2px 0px #FFFFFF1A inset, 0px -2px 4px 0px #73B8BB1A inset, 0px 4px 32px -4px #73B8BB3B",
               }}
             >
-              <button className="py-4 px-10 rounded-full w-full bg-[#14161c]">
+              <Link
+                href="https://forms.gle/d1h4WiZHMv8RPivx6"
+                className="py-4 px-10 rounded-full block text-center w-full bg-[#14161c]"
+              >
                 Join our waitlist
-              </button>
+              </Link>
             </div>
           </form>
         </section>
@@ -123,7 +128,7 @@ export default function Home() {
           <Image
             src={phoneBg}
             alt=""
-            className="absolute top-0 left-0 w-screen h-full lg:hidden"
+            className="absolute top-0 left-0 w-full h-full lg:hidden"
           />
           <div className="lg:max-w-[1114px] lg:mx-auto lg:relative">
             <Image
@@ -147,39 +152,42 @@ export default function Home() {
         </section>
         <footer className="px-5 pb-10 w-full relative z-10 bg-transparent max-w-[520px] mx-auto min-[900px]:px-0 min-[900px]:max-w-[unset]">
           <div
-            className="py-[1px] relative lg:max-w-7xl lg:mx-auto after:content[''] after:absolute after:-left-[1px] after:top-0 after:h-full after:w-[2px] after:bg-[#020202] before:content[''] before:absolute before:-right-[1px] before:top-0 before:h-full before:w-[2px] before:bg-[#020202]"
+            className="py-[1px] relative lg:max-w-7xl lg:mx-auto after:content[''] after:hidden after:absolute after:-left-[1px] after:top-0 after:h-full after:w-[2px] after:bg-[#020202] before:content[''] before:absolute before:-right-[1px] before:top-0 before:h-full before:w-[2px] before:bg-[#020202] before:hidden min-[1300]:after:block min-[1300]:before:block"
             style={{
               background:
                 "conic-gradient(from 180.41deg at 50% 94%, #2FD0D7 0deg, #F2F2F2 178.69deg, #418DF4 342.67deg, #2FD0D7 360deg)",
             }}
           >
-            <div className="w-full py-9 bg-[#020202] min-[900px]:flex min-[900px]:justify-between min-[900px]:items-center min-[900px]:px-[100px] min-[900px]:py-12 ">
-              <div className="min-[900px]:flex min-[900px]:items-center">
+            <div className="w-full py-9 bg-[#020202] min-[900px]:flex min-[900px]:justify-center min-[900px]:items-center min-[900px]:px-[100px] min-[900px]:py-12 ">
+              <div className="min-[900px]:flex min-[900px]:items-center min-[900px]:mr-4">
                 <Image
                   className="mx-auto mb-2 min-[900px]:mr-2"
                   src={handeeLogo}
                   alt="handee logo"
                 />
                 <p
-                  className="text-xl font-medium text-center my-2 mb-4 bg-clip-text text-transparent max-w-[353px] mx-auto min-[900px]:max-w-[unset]"
+                  className="text-xl font-medium text-center my-2 mb-4 bg-clip-text text-transparent max-w-[340px] mx-auto min-[900px]:max-w-[unset]"
                   style={{
                     backgroundImage:
                       "linear-gradient(90deg, #F68740 0%, #EE4E7C 30%, #4377B2 65%, #14B397 100%)",
                   }}
                 >
-                  Follow us on all our socials to stay updated !
+                  Follow us on our socials to stay updated !
                 </p>
               </div>
-              <div className="flex justify-between items-center space-x-5 w-[220px] mx-auto lg:mr-0">
-                <div className="bg-[#212121] rounded-2xl p-4">
+              <div className="flex justify-center items-center space-x-5 w-auto mx-auto min-[900px]:mx-0 lg:mr-0">
+                {/* <div className="bg-[#212121] rounded-2xl p-4">
                   <Image src={google} alt="google social media icon" />
                 </div>
                 <div className="bg-[#212121] rounded-2xl p-4">
                   <Image src={x} alt="x social media icon" />
-                </div>
-                <div className="bg-[#212121] rounded-2xl p-4">
+                </div> */}
+                <Link
+                  href="https://www.instagram.com/gethandees/"
+                  className="bg-[#212121] rounded-2xl p-4 block"
+                >
                   <Image src={ig} alt="instagram social media icon" />
-                </div>
+                </Link>
               </div>
             </div>
           </div>
