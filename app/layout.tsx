@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cabin, Outfit } from "next/font/google";
 import ogImage from "./opengraph-image.jpg";
 import "./globals.css";
+import Script from "next/script";
 
 const cabin = Cabin({
   variable: "--font-cabin",
@@ -60,6 +61,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=AW-16942451366" />
+      <Script id="analytics">{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-16942451366');
+      `}</Script>
       <body className={`${cabin.variable} ${outfit.variable} antialiased`}>
         {children}
       </body>
